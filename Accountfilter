@@ -1,0 +1,26 @@
+<apex:page standardController="Account" extensions="AccountsFilters">
+    <apex:form >
+	  <apex:pageBlock title="To Search on Account Results">
+        <apex:pageBlockSection >
+            Billing City: {! Account.BillingCity } <br/>
+            Billing State: {! Account.BillingState } <br/>
+            Billing Country:{! Account.BillingCountry} <br/>
+            
+        </apex:pageBlockSection>
+     </apex:pageBlock>
+        
+        <apex:pageBlock title="Input data">
+            <apex:pageBlocksection collapsible="false" columns="1">
+                <apex:inputField value="{!Account.BillingCity}"/>
+                <apex:inputfield value="{!Account.BillingState}"/>
+                <apex:inputfield value="{!Account.BillingCountry}"/>
+ 				
+            </apex:pageBlocksection>
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="btnSearch" action="{!getAccounts}"/>
+            </apex:pageBlockButtons>
+          
+        </apex:pageBlock>	
+     
+    </apex:form>     
+</apex:page>

@@ -1,0 +1,30 @@
+<apex:page standardController="Contact">
+    <apex:form >
+	  <apex:pageBlock title="To create and update Contact's record">
+        <apex:pageBlockSection >
+            First Name: {! Contact.FirstName } <br/>
+            Last Name: {! Contact.LastName } <br/>
+            phone:{! contact.phone} <br/>
+            Owner's Email: {! Contact.Owner.Email } <br/>
+            Summary field: {! Contact.FF26352__SummaryField__c} <br/>
+        </apex:pageBlockSection>
+     </apex:pageBlock>
+        
+        <apex:pageBlock title="Input data">
+            <apex:pageBlocksection collapsible="false" columns="1">
+                <apex:inputField value="{!Contact.FirstName}"/>
+                <apex:inputfield value="{!Contact.LastName}"/>
+                <apex:inputfield value="{!Contact.Phone}"/>
+ 				<apex:inputfield value="{!Contact.Owner.Email}"/>  
+                <apex:inputfield value="{!Contact.SummaryField__c}"/>
+            </apex:pageBlocksection>
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Save" action="{!Save}"/>
+                <apex:commandButton value="Cancel" action="{!Cancel}"/>
+                <apex:commandLink value="Save" action="{!Save}"/>
+            </apex:pageBlockButtons>
+          
+        </apex:pageBlock>	
+     
+    </apex:form>     
+</apex:page>

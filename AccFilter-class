@@ -1,0 +1,14 @@
+public class AccountsFilters 
+{
+    public AccountsFilters(ApexPages.StandardController controller){
+        
+    }
+	public string accrecords{get; set;}
+    public list<Account> accList{get; set;}
+    public void getAccounts() 
+    {
+        accList = new list<Account>([SELECT BillingCity, BillingState, BillingCountry from Account]);
+    }
+
+
+}
